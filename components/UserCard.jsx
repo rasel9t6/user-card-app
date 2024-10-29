@@ -24,7 +24,7 @@ export default function UserCard({ user }) {
         alt={`${name.first} ${name.last}`}
       />
       <div className='text-center mt-4 p-2 border'>
-        <h2 className='text-xl font-semibold'>
+        <h2 className='text-xl font-bold'>
           {name.title} {name.first} {name.last}
         </h2>
         <Link
@@ -34,13 +34,25 @@ export default function UserCard({ user }) {
           {email}
         </Link>
         <p className='text-gray-600'>
-         {location.street.name}, {location.city}, {location.state}, {location.country}
+          {location.street.name}, {location.city}, {location.state},{' '}
+          {location.country}
         </p>
-        <p className='text-gray-600'>Birthday: {formateDate(dob.date)}</p>
-        <p className='text-gray-600'>Age: {dob.age}</p>
-        <p className='text-gray-600'>Gender: {gender}</p>
-        <p className='text-gray-600'>Phone: {phone}</p>
-        <p className='text-gray-600'>Cell: {cell}</p>
+        <p className='text-gray-600'>
+          <span className='font-semibold'>Birthday:</span>{' '}
+          {formateDate(dob.date)}
+        </p>
+        <p className='text-gray-600'>
+          <span className='font-semibold'>Age:</span> {dob.age}
+        </p>
+        <p className='text-gray-600'>
+          <span className='font-semibold'>Gender:</span> {gender}
+        </p>
+        <p className='text-gray-600'>
+          <span className='font-semibold'>Phone:</span> {phone}
+        </p>
+        <p className='text-gray-600'>
+          <span className='font-semibold'>Cell:</span> {cell}
+        </p>
         <p className='text-gray-600'>
           Registered @ {formateDate(registered.date)}
         </p>
