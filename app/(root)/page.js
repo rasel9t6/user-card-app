@@ -1,12 +1,13 @@
+import UserCard from '@/components/UserCard';
 
 export default async function Home() {
   const response = await fetch('https://randomuser.me/api');
   const data = await response.json();
-  const user = data.results[0]
+  const user = data.results[0];
   console.log(user);
   return (
-    <>
-      USER Data
-    </>
+    <main className='flex justify-center items-center h-screen bg-gray-100 text-black'>
+      <UserCard user={user} />
+    </main>
   );
 }
