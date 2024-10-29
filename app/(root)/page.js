@@ -1,7 +1,7 @@
 import UserCard from '@/components/UserCard';
 
 export default async function Home() {
-  const response = await fetch('https://randomuser.me/api');
+  const response = await fetch(`${process.env.API_URL}/api`);
   const data = await response.json();
   const user = data.results[0];
   console.log(user);
